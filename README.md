@@ -1,4 +1,4 @@
-# Astro Starter Kit: Basics
+# Tribu Resiliente made with Astro v4.1.0
 
 ```sh
 npm create astro@latest -- --template basics
