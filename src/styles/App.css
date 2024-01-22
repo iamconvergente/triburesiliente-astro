@@ -1,0 +1,114 @@
+html {
+  /* Including padding and border in size calculation. */
+  box-sizing: border-box;
+  font-size: 62.5%;
+  height: 100dvh;
+  line-height: 1.55;
+}
+
+:root {
+  --accent: 136, 58, 234;
+  --accent-light: 224, 204, 250;
+  --accent-dark: 49, 10, 101;
+  --accent-gradient: linear-gradient(
+    45deg,
+    rgb(var(--accent)),
+    rgb(var(--accent-light)) 30%,
+    white 60%
+  );
+}
+
+*,
+::after,
+::before {
+  border: 0;
+  box-sizing: inherit;
+  margin: 0;
+  /* Prevent grid and flex items from spilling out of their container */
+  min-width: 0;
+  padding: 0;
+  /* Position based on immediate parent and allow adjusting top/left/right/bottom */
+  position: relative;
+}
+
+body {
+  /* Ensure that the body fills the entire viewport */
+  min-height: 100%;
+  font-size: 1.6rem;
+  line-height: 1.55;
+}
+
+code {
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  /* Balance headings across multiple lines into an even block */
+  text-wrap: balance;
+}
+
+:is(p, small) {
+  /* Prevent text orphans (single words on last line). */
+  text-wrap: pretty;
+}
+
+main {
+  margin: auto;
+  padding: 1rem;
+  width: 800px;
+  max-width: calc(100% - 2rem);
+  color: white;
+  font-size: 20px;
+  line-height: 1.6;
+}
+.astro-a {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translatex(-50%);
+  width: 220px;
+  height: auto;
+  z-index: -1;
+}
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.text-gradient {
+  background-image: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400%;
+  background-position: 0%;
+}
+.instructions {
+  margin-bottom: 2rem;
+  border: 1px solid rgba(var(--accent-light), 25%);
+  background: linear-gradient(
+    rgba(var(--accent-dark), 66%),
+    rgba(var(--accent-dark), 33%)
+  );
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+.instructions code {
+  font-size: 0.8em;
+  font-weight: bold;
+  background: rgba(var(--accent-light), 12%);
+  color: rgb(var(--accent-light));
+  border-radius: 4px;
+  padding: 0.3em 0.4em;
+}
+.instructions strong {
+  color: rgb(var(--accent-light));
+}
+.link-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+  gap: 2rem;
+  padding: 0;
+}
