@@ -1,2 +1,1 @@
-
-// Content inner with Fs or Markdown
+// Content with astro:content
